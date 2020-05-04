@@ -39,7 +39,7 @@ public class ServletController extends HttpServlet {
 			String password = request.getParameter("password");
 			
 			/*
-			 * On verifie si cet utilisateur est dans la base de donn�es et le dirige vers
+			 * On verifie si cet utilisateur est dans la base de données et le dirige vers
 			 * la page d'accueil avec son nom Pour cela on appelle la fonction static de la
 			 * classe LoginDao qui retourne un object de la classe User
 			 */
@@ -55,6 +55,8 @@ public class ServletController extends HttpServlet {
 			}
 			
 		}
+		// Si c'est log out : on ferme la session et
+		// on redirige l'utilisateur vers la page de connection
 		else if(path.contentEquals("/logout")) {
 			HttpSession session = request.getSession();
 			session.removeAttribute("username");
@@ -64,6 +66,12 @@ public class ServletController extends HttpServlet {
 		else if(path.equals("/home") || path.equals("/")) {
 			request.getRequestDispatcher("produits.jsp").forward(request, response);
 		}
+		/*
+		 * On recupere le mot saisi dans la zone de recherche et fait appel
+		 * à la méthode produitsParMotCle de l'interface IProduitDao qui fait un SELECT .... LIKE
+		 * En suite on attache la liste des produits récupeerés au modèle pour pouvoir l'utiliser
+		 * dans la View produits.jsp
+		 */
 		else if(path.equals("/chercher")) {
 			String motCle = request.getParameter("motCle");
 			ProduitModel model = new ProduitModel();
@@ -92,6 +100,7 @@ public class ServletController extends HttpServlet {
 			request.setAttribute("produit", produit);
 			request.getRequestDispatcher("supprimerProduit.jsp").forward(request, response);	
 		}
+		
 		else if(path.equals("/confirmer-suppression")) {
 			Long id = Long.parseLong(request.getParameter("id"));
 			produitDao.deleteProduit(id);
