@@ -3,19 +3,29 @@
 # Lieu : Casablanca											 
 
 # Projet :
-Une application web de gestion des produits basÈe sur       
+Une application web de gestion des produits bas√©e sur       
 Java/JEE (Servlet, JSP, JSTL et JDBC).							 
 
-# FonctionalitÈs :
+# Fonctionalit√©s :
 
-C'est une application simple qui permet de rÈaliser des opÈrations
-CRUD (Create, Retrive, Update,Delete) sur un ensemble des ÈlÈments que 
-j'ai nommÈs prouits qui sont dans une base de donnÈes.
-Un utilisateur se connecte et peut effectuer des opÈrations suivantes :
-- Chercher un produit par un mot clÈ.
-- Ajouter un nouveau produit dans la base de donnÈes.
+C'est une application simple qui permet de r√©aliser des op√©rations
+CRUD (Create, Retrive, Update,Delete) sur un ensemble des √©l√©ments que 
+j'ai nomm√©s prouits qui sont dans une base de donn√©es.
+Un utilisateur se connecte et peut effectuer des op√©rations suivantes :
+- Chercher un produit par un mot cl√©.
+- Ajouter un nouveau produit dans la base de donn√©es.
 - Editer un produit.
 - Supprimer un produit. 
+Autrement dit : 
+- Un utilisateur se connecte
+- Une fois connect√©, l'utilisateur peut faire des op√©rations simples (CRUD) pour des produits.
+- J'ai utilis√© les Servlet, JSP, JSTL, Notions de Session.
+- J'ai utilis√© le design patterne Singleton pour la connection √† la base de donn√©s. 
+- J'ai suivi le design pattern MVC 
+- J'ai r√©alis√© des tests unitaires.
 
-# DÈmo 
-- Voir une dÈmo de l'application ici : https://github.com/AboubakarAhamada/GestionPrdouits_JEE_JDBC/wiki
+# D√©mo 
+- Voir une d√©mo de l'application en image ici : https://github.com/AboubakarAhamada/GestionPrdouits_JEE_JDBC/wiki
+- Voir une d√©mo de l'appliction en vid√©o ici : https://www.youtube.com/watch?v=RIFSNbZAgP8&feature=youtu.be
+
+
